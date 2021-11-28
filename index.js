@@ -92,11 +92,9 @@ const server = http
     }
   })
   .on('error', function (e) {
-    res.status(500)
+    res.writeHead(500)
     res.end(JSON.stringify({ message: 'internal server error' }))
-    console.log(e)
   })
-
 const start = async () => {
   try {
     server.listen(PORT, () => console.log(`Server started on port ${PORT}`))
