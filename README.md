@@ -1,5 +1,9 @@
 # Simple-CRUD-API
 
+##BEFORE RUN SERVER
+
+PLEASE DELETE node_modules FOLDER
+
 ## Run Server
 
 ```bash
