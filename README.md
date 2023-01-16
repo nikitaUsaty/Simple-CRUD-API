@@ -1,41 +1,26 @@
-# Simple-CRUD-API
+# simple-crud-api
 
-## BEFORE RUN SERVER
+## run server
 
-PLEASE DELETE node_modules FOLDER
+1. npm i
+2. npm run start:dev
+3. server should run on port 5050
 
-## Run Server
+## how it works
 
-```bash
- npm i
- npm run start:dev
-```
-
-Server should start on port 5050
-
-**http://localhost:5050/person**
-
-## How It Works
-
-- **GET** **http://localhost:5050/person** or **http://localhost:5050/person/${personId}** should return status code 200 and all persons(or an empty array if threre are no persons)
-- **GET** **http://localhost:5050/person/${personId}**
-  should return status code 200 person with corresponding personId
+- **GET** /users or /users/${userId} should return status code 200 and all persons(or an empty array if threre are no persons)
+- **GET** /users/${userId}
+  should return status code 200 users with corresponding personId
   should return status code 400 with error message if personId is invalid (or not uuid)
-  should return status code 404 with error message if if there's no person with corresponding personId
+  should return status code 404 with error message if if there's no users with corresponding personId
 
-- **POST** **http://localhost:5050** should return status code 200 and create a record about new person and store it in database (fields name, age and hobbies are \*\*required\*\*)
+- **POST** /users should return status code 200 and create a record about new users and store it in database (fields name, age and hobbies are **required**)
   if there're no required fields server should return status code 400 and corresponding message
 
-- **PUT** **http://localhost:5050/person/${personId}** should update record about existing person and return status code 200
+- **PUT** /users/${userId} should update record about existing users and return status code 200
   should return status code 400 with error message if personId is invalid (or not uuid)
-  should return status code 404 with error message if if there's no person with corresponding personId
+  should return status code 404 with error message if if there's no users with corresponding personId
 
-- **DELETE** **http://localhost:5050/person/${personId}** should delete record about existing person from database
+- **DELETE** /users/${userId} should delete record about existing users from database
   should return status code 400 with error message if personId is invalid (or not uuid)
-  should return status code 404 with error message if if there's no person with corresponding personId
-
-## Run Tests
-
-```bash
-npm run test
-```
+  should return status code 404 with error message if if there's no users with corresponding personId
